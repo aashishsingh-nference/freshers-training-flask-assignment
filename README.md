@@ -51,9 +51,13 @@ Name of the database used in this project is `aashish`. It consists of the follo
 - Models
 
 ### Running the Server
+
 Install the dependecies using the requirement.txt file:
+
 ` pip install -r requirements.txt`
+
 Run the server:
+
 `python server.py`
 
 ### API Details
