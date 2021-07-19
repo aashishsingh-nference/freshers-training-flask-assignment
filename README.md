@@ -34,3 +34,45 @@ Clone this repo in your local and make a new branch with your name, update the r
 ###### You can always reach out to Sairam Bade or Kuldeep on slack in case of any doubt. Good Luck!
 ---------------------------------------------
 #Your readme goes here :)
+
+### Database Details
+Add the following Mongo credentials in the .env file:
+- HOST
+- PORT
+- USERNAME
+- PASSWORD
+Name of the database used in this project is `aashish`. It consists of the following 3 collections:
+- Projects 
+- Datasets
+- Models
+
+### Running the Server
+Install the dependecies using the requirement.txt file:
+` pip install -r requirements.txt`
+Run the server:
+`python server.py`
+
+### API Details
+1. `POST /store_projects`
+- Creates new collections or updates existing collections for projects, datasets and models for storing their respective details.
+- Accepts the id (project id) as request parameter and makes a get request to the particular project service.
+- Inserts new documents into the project collection or updates if it already exists. Also creates separate colelctions for models and datasets to store their respective information.
+
+2. `GET /getproject`
+- Fetches the information related to a particular project.
+- Accepts the projectid as a query string and finds the particular project details in the project collection and returns the response.
+
+3. `GET /getinfo`
+- Fetches information related to a particular dataset or model based on given filter as Query Strings:
+1. infotype - Enter dataset for getting dataset related information or model for model related information
+2. Incase of Dataset:
+id - Enter the dataset id to get information of that particular dataset.
+Incase of Model:
+model_name - Enter the model name to get information of that particular model.
+- It queries the selected collection(models or datasets) as per the filter and returns the respective response.
+
+4. `GET /getmodels`
+- Fetches information related to all the models that uses a particular dataset.
+- Accpets the datasetid as a query string and finds all the models from the models collection that uses the particular dataset using the datasetid and returns the response.
+
+
