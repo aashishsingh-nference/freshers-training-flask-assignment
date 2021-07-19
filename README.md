@@ -41,7 +41,11 @@ Add the following Mongo credentials in the .env file:
 - PORT
 - USERNAME
 - PASSWORD
+
+
 Name of the database used in this project is `aashish`. It consists of the following 3 collections:
+
+
 - Projects 
 - Datasets
 - Models
